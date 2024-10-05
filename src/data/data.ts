@@ -48,26 +48,6 @@ type AirportsData = Airport[];
                 "stops": ["ST001", "ST002"]
               },
               {
-                "id": "FL002",
-                "code": "AI102",
-                "airline_name": "IndiGo",
-                "time": "5:00 PM",
-                "date": "2024-10-12",
-                "price": 3000,
-                "travelling_time": "3h",
-                "stops": []
-              },
-              {
-                "id": "FL003",
-                "code": "SG201",
-                "airline_name": "SpiceJet",
-                "time": "11:00 AM",
-                "date": "2024-10-13",
-                "price": 2000,
-                "travelling_time": "2h 15m",
-                "stops": []
-              },
-              {
                 "id": "FL004",
                 "code": "AI103",
                 "airline_name": "Air India",
@@ -119,25 +99,110 @@ type AirportsData = Airport[];
                 "travelling_time": "3h",
                 "stops": []
               },
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AP003",
+        "name": "Netaji Subhas Chandra Bose International Airport",
+        "code": "CCU",
+        "country": "India",
+        "city": "Kolkata",
+        "flights": [
+          {
+            "arrival": [
               {
-                "id": "FL009",
-                "code": "6E304",
-                "airline_name": "IndiGo",
-                "time": "12:15 PM",
-                "date": "2024-10-13",
-                "price": 2900,
-                "travelling_time": "2h 45m",
-                "stops": ["ST007"]
-              },
-              {
-                "id": "FL010",
-                "code": "AI109",
+                "id": "FL013",
+                "code": "AI301",
                 "airline_name": "Air India",
-                "time": "3:00 PM",
-                "date": "2024-10-14",
+                "time": "12:30 PM",
+                "date": "2024-10-12",
+                "price": 2600,
+                "travelling_time": "2h 45m",
+                "stops": []
+              }
+            ],
+            "departure": [
+              {
+                "id": "FL014",
+                "code": "6E401",
+                "airline_name": "IndiGo",
+                "time": "5:00 PM",
+                "date": "2024-10-12",
                 "price": 2400,
                 "travelling_time": "3h",
+                "stops": ["ST006"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AP004",
+        "name": "Chennai International Airport",
+        "code": "MAA",
+        "country": "India",
+        "city": "Chennai",
+        "flights": [
+          {
+            "arrival": [
+              {
+                "id": "FL015",
+                "code": "AI401",
+                "airline_name": "Air India",
+                "time": "1:15 PM",
+                "date": "2024-10-12",
+                "price": 2900,
+                "travelling_time": "2h 50m",
                 "stops": []
+              }
+            ],
+            "departure": [
+              {
+                "id": "FL016",
+                "code": "SG305",
+                "airline_name": "SpiceJet",
+                "time": "3:45 PM",
+                "date": "2024-10-12",
+                "price": 2300,
+                "travelling_time": "3h 10m",
+                "stops": ["ST007"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AP005",
+        "name": "Rajiv Gandhi International Airport",
+        "code": "HYD",
+        "country": "India",
+        "city": "Hyderabad",
+        "flights": [
+          {
+            "arrival": [
+              {
+                "id": "FL017",
+                "code": "AI501",
+                "airline_name": "Air India",
+                "time": "11:00 AM",
+                "date": "2024-10-12",
+                "price": 2700,
+                "travelling_time": "2h 30m",
+                "stops": []
+              }
+            ],
+            "departure": [
+              {
+                "id": "FL018",
+                "code": "6E501",
+                "airline_name": "IndiGo",
+                "time": "4:00 PM",
+                "date": "2024-10-12",
+                "price": 2200,
+                "travelling_time": "3h",
+                "stops": ["ST008"]
               }
             ]
           }
