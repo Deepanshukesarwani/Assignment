@@ -1,3 +1,86 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"]
 }
+
+
+
+// {
+//   "airports": [
+//     {
+//       "name": "Deepanshu Bhai Ka Airport",
+//       "code": "DBA",
+//       "country": "India",
+//       "city": "New Delhi",
+//       "flights": [
+//         {
+//           "arrival": [
+//             {
+//               "id": "423dsf",
+//               "time": "10:30 AM",
+//               "date": "2024-10-12",
+//               "price": 2500,
+//               "travelling_time": "2h 30m",
+//               "stops": ["id1", "id2"]
+//             },
+//             {
+//               "id": "756fgh",
+//               "time": "3:45 PM",
+//               "date": "2024-10-13",
+//               "price": 3200,
+//               "travelling_time": "3h 15m",
+//               "stops": ["id3"]
+//             }
+//           ],
+//           "departure": [
+//             {
+//               "id": "723hfg",
+//               "time": "11:45 AM",
+//               "date": "2024-10-12",
+//               "price": 2700,
+//               "travelling_time": "2h 45m",
+//               "stops": []
+//             },
+//             {
+//               "id": "912jkl",
+//               "time": "5:20 PM",
+//               "date": "2024-10-13",
+//               "price": 3000,
+//               "travelling_time": "3h",
+//               "stops": ["id4", "id5"]
+//             }
+//           ]
+//         }
+//       ]
+//     },
+//     {
+//       "name": "Vikas International Airport",
+//       "code": "VIA",
+//       "country": "USA",
+//       "city": "San Francisco",
+//       "flights": [
+//         {
+//           "arrival": [
+//             {
+//               "id": "159kln",
+//               "time": "9:15 AM",
+//               "date": "2024-10-12",
+//               "price": 1800,
+//               "travelling_time": "1h 50m",
+//               "stops": []
+//             }
+//           ],
+//           "departure": [
+//             {
+//               "id": "783mnb",
+//               "time": "7:00 PM",
+//               "date": "2024-10-13",
+//               "price": 2800,
+//               "travelling_time": "3h 30m",
+//               "stops": ["id6", "id7"]
+//             }
+//           ]
+//         }
+//       ]
+//     }
+//   ]
+// }
