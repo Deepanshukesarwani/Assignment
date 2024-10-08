@@ -8,6 +8,8 @@ interface FlightCardProps {
   airlineName: string;
   flightNumber: string;
   // departureTime: string;
+  destinationcode:string | undefined;
+  departurecode:string | undefined;
   arrivalTime: string;
   stops: string;
   duration: string;
@@ -16,14 +18,13 @@ interface FlightCardProps {
   onClick?: () => void;
 }
 
-interface NavbarProps {
-  
-  }
 export const FlightCard: React.FC<FlightCardProps> = ({
   airlineLogo,
   airlineName,
   flightNumber,
   // departureTime,
+  destinationcode,
+  departurecode,
   arrivalTime,
   stops,
   duration,
@@ -58,7 +59,7 @@ export const FlightCard: React.FC<FlightCardProps> = ({
           {/* Flight timings and stops */}
           <div className="flex flex-col space-y-2 text-center">
             <p>
-              <span className="text-gray-400">CDG</span>- <span className="text-gray-400">DXB</span>
+              <span className="text-gray-400">{departurecode}</span>- <span className="text-gray-400">{destinationcode}</span>
             </p>
             <p>{duration}</p>
           </div>
@@ -92,7 +93,7 @@ export const FlightCard: React.FC<FlightCardProps> = ({
           {/* Flight timings and stops */}
           <div className="flex flex-col space-y-2 text-center">
             <p>
-              <span className="text-gray-400">CDG</span>- <span className="text-gray-400">DXB</span>
+              <span className="text-gray-400">{destinationcode}</span>- <span className="text-gray-400">{departurecode}</span>
             </p>
             <p>{duration}</p>
           </div>
