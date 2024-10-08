@@ -1,13 +1,15 @@
 
 interface Flight {
   id: string;
-  code: string;
-  airline_name: string;
-  time: string;
+  flightNumber: string;
+  airlineName: string;
+  arrivalTime: string;
   date: string;
   price: number;
-  travelling_time: string;
-  stops: string[];
+  duration: string;
+  stops: string;
+  arrival_airport_id?:string;
+  departure_airport_id?: string
 }
 
 interface FlightSchedule {
@@ -39,72 +41,56 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL001",
-                "code": "AI101",
-                "airline_name": "Air India",
-                "time": "10:30 AM",
+                "flightNumber": "AI101",
+                "airlineName": "Air India",
+                "arrivalTime": "10:30 AM",
                 "date": "2024-10-12",
                 "price": 2500,
-                "travelling_time": "2h 30m",
-                "stops": ["ST001", "ST002"]
+                "duration": "2h 30m",
+                "stops": "Non stop",
+                "arrival_airport_id": "AP002",
               },
               {
                 "id": "FL004",
-                "code": "AI103",
-                "airline_name": "Air India",
-                "time": "3:30 PM",
+                "flightNumber": "AI103",
+                "airlineName": "Air India",
+                "arrivalTime": "3:30 PM",
                 "date": "2024-10-13",
                 "price": 3200,
-                "travelling_time": "3h",
-                "stops": ["ST003"]
+                "duration": "3h",
+                "stops": "1 stop",
+                "arrival_airport_id": "AP003",
               },
-              {
-                "id": "FL005",
-                "code": "6E301",
-                "airline_name": "IndiGo",
-                "time": "8:45 AM",
-                "date": "2024-10-14",
-                "price": 2700,
-                "travelling_time": "2h 30m",
-                "stops": []
-              }
             ],
             "departure": [
               {
                 "id": "FL006",
-                "code": "AI107",
-                "airline_name": "Air India",
-                "time": "7:30 AM",
+                "flightNumber": "AI107",
+                "airlineName": "Air India",
+                "arrivalTime": "7:30 AM",
                 "date": "2024-10-12",
                 "price": 2200,
-                "travelling_time": "2h 30m",
-                "stops": []
+                "duration": "2h 30m",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP004"
               },
               {
                 "id": "FL007",
-                "code": "SG203",
-                "airline_name": "SpiceJet",
-                "time": "2:00 PM",
+                "flightNumber": "SG203",
+                "airlineName": "SpiceJet",
+                "arrivalTime": "2:00 PM",
                 "date": "2024-10-12",
                 "price": 2500,
-                "travelling_time": "3h",
-                "stops": ["ST006"]
-              },
-              {
-                "id": "FL008",
-                "code": "AI108",
-                "airline_name": "Air India",
-                "time": "8:00 AM",
-                "date": "2024-10-13",
-                "price": 2700,
-                "travelling_time": "3h",
-                "stops": []
+                "duration": "3h",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP005"
               },
             ]
           }
         ]
       },
       {
-        "id": "AP003",
+        "id": "AP002",
         "name": "Netaji Subhas Chandra Bose International Airport",
         "code": "CCU",
         "country": "India",
@@ -114,32 +100,34 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL013",
-                "code": "AI301",
-                "airline_name": "Air India",
-                "time": "12:30 PM",
+                "flightNumber": "AI301",
+                "airlineName": "Air India",
+                "arrivalTime": "12:30 PM",
                 "date": "2024-10-12",
                 "price": 2600,
-                "travelling_time": "2h 45m",
-                "stops": []
+                "duration": "2h 45m",
+                "stops": "2 stops",
+                "arrival_airport_id": "AP004",
               }
             ],
             "departure": [
               {
                 "id": "FL014",
-                "code": "6E401",
-                "airline_name": "IndiGo",
-                "time": "5:00 PM",
+                "flightNumber": "6E401",
+                "airlineName": "IndiGo",
+                "arrivalTime": "5:00 PM",
                 "date": "2024-10-12",
                 "price": 2400,
-                "travelling_time": "3h",
-                "stops": ["ST006"]
+                "duration": "3h",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP001"
               }
             ]
           }
         ]
       },
       {
-        "id": "AP004",
+        "id": "AP003",
         "name": "Chennai International Airport",
         "code": "MAA",
         "country": "India",
@@ -149,32 +137,34 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL015",
-                "code": "AI401",
-                "airline_name": "Air India",
-                "time": "1:15 PM",
+                "flightNumber": "AI401",
+                "airlineName": "Air India",
+                "arrivalTime": "1:15 PM",
                 "date": "2024-10-12",
                 "price": 2900,
-                "travelling_time": "2h 50m",
-                "stops": []
+                "duration": "2h 50m",
+                "stops": "Non-stop",
+                "arrival_airport_id": "AP002",
               }
             ],
             "departure": [
               {
                 "id": "FL016",
-                "code": "SG305",
-                "airline_name": "SpiceJet",
-                "time": "3:45 PM",
+                "flightNumber": "SG305",
+                "airlineName": "SpiceJet",
+                "arrivalTime": "3:45 PM",
                 "date": "2024-10-12",
                 "price": 2300,
-                "travelling_time": "3h 10m",
-                "stops": ["ST007"]
+                "duration": "3h 10m",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP004"
               }
             ]
           }
         ]
       },
       {
-        "id": "AP005",
+        "id": "AP004",
         "name": "Rajiv Gandhi International Airport",
         "code": "HYD",
         "country": "India",
@@ -184,32 +174,34 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL017",
-                "code": "AI501",
-                "airline_name": "Air India",
-                "time": "11:00 AM",
+                "flightNumber": "AI501",
+                "airlineName": "Air India",
+                "arrivalTime": "11:00 AM",
                 "date": "2024-10-12",
                 "price": 2700,
-                "travelling_time": "2h 30m",
-                "stops": []
+                "duration": "2h 30m",
+                "stops":"Non-stop",
+                "arrival_airport_id": "AP002",
               }
             ],
             "departure": [
               {
                 "id": "FL018",
-                "code": "6E501",
-                "airline_name": "IndiGo",
-                "time": "4:00 PM",
+                "flightNumber": "6E501",
+                "airlineName": "IndiGo",
+                "arrivalTime": "4:00 PM",
                 "date": "2024-10-12",
                 "price": 2200,
-                "travelling_time": "3h",
-                "stops": ["ST008"]
+                "duration": "3h",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP002"
               }
             ]
           }
         ]
       },
       {
-        "id": "AP002",
+        "id": "AP005",
         "name": "Chhatrapati Shivaji Maharaj International Airport",
         "code": "BOM",
         "country": "India",
@@ -219,112 +211,79 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL011",
-                "code": "AI201",
-                "airline_name": "Air India",
-                "time": "9:00 AM",
+                "flightNumber": "AI201",
+                "airlineName": "Air India",
+                "arrivalTime": "9:00 AM",
                 "date": "2024-10-12",
                 "price": 2600,
-                "travelling_time": "3h",
-                "stops": ["ST009"]
+                "duration": "3h",
+                "stops": "Non-stop",
+                "arrival_airport_id": "AP002",
               },
               {
                 "id": "FL012",
-                "code": "SG301",
-                "airline_name": "SpiceJet",
-                "time": "12:30 PM",
+                "flightNumber": "SG301",
+                "airlineName": "SpiceJet",
+                "arrivalTime": "12:30 PM",
                 "date": "2024-10-12",
                 "price": 2300,
-                "travelling_time": "2h 45m",
-                "stops": []
+                "duration": "2h 45m",
+                "stops":"Non-stop",
+                "arrival_airport_id": "AP001",
               },
               {
                 "id": "FL013",
-                "code": "6E401",
-                "airline_name": "IndiGo",
-                "time": "4:30 PM",
+                "flightNumber": "6E401",
+                "airlineName": "IndiGo",
+                "arrivalTime": "4:30 PM",
                 "date": "2024-10-13",
                 "price": 2200,
-                "travelling_time": "3h",
-                "stops": []
+                "duration": "3h",
+                "stops": "Non-stop",
+                "arrival_airport_id": "AP004",
               },
-              {
-                "id": "FL014",
-                "code": "AI202",
-                "airline_name": "Air India",
-                "time": "6:00 PM",
-                "date": "2024-10-13",
-                "price": 3200,
-                "travelling_time": "3h 30m",
-                "stops": ["ST010"]
-              },
-              {
-                "id": "FL015",
-                "code": "SG302",
-                "airline_name": "SpiceJet",
-                "time": "7:45 AM",
-                "date": "2024-10-14",
-                "price": 2800,
-                "travelling_time": "3h",
-                "stops": []
-              }
             ],
             "departure": [
               {
                 "id": "FL016",
-                "code": "AI205",
-                "airline_name": "Air India",
-                "time": "6:30 AM",
+                "flightNumber": "AI205",
+                "airlineName": "Air India",
+                "arrivalTime": "6:30 AM",
                 "date": "2024-10-12",
                 "price": 2200,
-                "travelling_time": "3h",
-                "stops": []
+                "duration": "3h",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP004"
               },
               {
                 "id": "FL017",
-                "code": "SG304",
-                "airline_name": "SpiceJet",
-                "time": "12:00 PM",
+                "flightNumber": "SG304",
+                "airlineName": "SpiceJet",
+                "arrivalTime": "12:00 PM",
                 "date": "2024-10-12",
                 "price": 2600,
-                "travelling_time": "3h 15m",
-                "stops": ["ST012"]
+                "duration": "3h 15m",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP006"
+
               },
               {
                 "id": "FL018",
-                "code": "6E404",
-                "airline_name": "IndiGo",
-                "time": "3:30 PM",
+                "flightNumber": "6E404",
+                "airlineName": "IndiGo",
+                "arrivalTime": "3:30 PM",
                 "date": "2024-10-13",
                 "price": 2400,
-                "travelling_time": "3h",
-                "stops": []
+                "duration": "3h",
+                "stops":"Non-stop",
+                "departure_airport_id": "AP002"
               },
-              {
-                "id": "FL019",
-                "code": "AI206",
-                "airline_name": "Air India",
-                "time": "6:15 PM",
-                "date": "2024-10-13",
-                "price": 3200,
-                "travelling_time": "3h",
-                "stops": ["ST013"]
-              },
-              {
-                "id": "FL020",
-                "code": "SG305",
-                "airline_name": "SpiceJet",
-                "time": "7:45 AM",
-                "date": "2024-10-14",
-                "price": 2800,
-                "travelling_time": "3h",
-                "stops": []
-              }
             ]
           }
         ]
       },
       {
-        "id": "AP003",
+        "id": "AP006",
         "name": "John F. Kennedy International Airport",
         "code": "JFK",
         "country": "USA",
@@ -334,72 +293,78 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL021",
-                "code": "DL401",
-                "airline_name": "Delta",
-                "time": "10:00 AM",
+                "flightNumber": "DL401",
+                "airlineName": "Delta",
+                "arrivalTime": "10:00 AM",
                 "date": "2024-10-12",
                 "price": 550,
-                "travelling_time": "5h",
-                "stops": []
+                "duration": "5h",
+                "stops": "Non-stop",
+                "arrival_airport_id": "AP002",
               },
               {
                 "id": "FL022",
-                "code": "AA101",
-                "airline_name": "American Airlines",
-                "time": "2:00 PM",
+                "flightNumber": "AA101",
+                "airlineName": "American Airlines",
+                "arrivalTime": "2:00 PM",
                 "date": "2024-10-12",
                 "price": 600,
-                "travelling_time": "5h 15m",
-                "stops": []
+                "duration": "5h 15m",
+                "stops": "Non-stop",
+                "arrival_airport_id": "AP001",
               },
               {
                 "id": "FL023",
-                "code": "UA302",
-                "airline_name": "United Airlines",
-                "time": "4:30 PM",
+                "flightNumber": "UA302",
+                "airlineName": "United Airlines",
+                "arrivalTime": "4:30 PM",
                 "date": "2024-10-13",
                 "price": 650,
-                "travelling_time": "5h",
-                "stops": ["ST100"]
+                "duration": "5h",
+                "stops": "Non-stop",
+                "arrival_airport_id": "AP003",
               }
             ],
             "departure": [
               {
                 "id": "FL024",
-                "code": "DL402",
-                "airline_name": "Delta",
-                "time": "6:00 AM",
+                "flightNumber": "DL402",
+                "airlineName": "Delta",
+                "arrivalTime": "6:00 AM",
                 "date": "2024-10-14",
                 "price": 550,
-                "travelling_time": "5h",
-                "stops": []
+                "duration": "5h",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP004"
               },
               {
                 "id": "FL025",
-                "code": "AA102",
-                "airline_name": "American Airlines",
-                "time": "9:00 AM",
+                "flightNumber": "AA102",
+                "airlineName": "American Airlines",
+                "arrivalTime": "9:00 AM",
                 "date": "2024-10-14",
                 "price": 600,
-                "travelling_time": "5h",
-                "stops": []
+                "duration": "5h",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP005"
               },
               {
                 "id": "FL026",
-                "code": "UA303",
-                "airline_name": "United Airlines",
-                "time": "12:30 PM",
+                "flightNumber": "UA303",
+                "airlineName": "United Airlines",
+                "arrivalTime": "12:30 PM",
                 "date": "2024-10-14",
                 "price": 700,
-                "travelling_time": "5h",
-                "stops": []
+                "duration": "5h",
+                "stops":"Non-stop",
+                "departure_airport_id": "AP001"
               }
             ]
           }
         ]
       },
       {
-        "id": "AP004",
+        "id": "AP007",
         "name": "Los Angeles International Airport",
         "code": "LAX",
         "country": "USA",
@@ -409,62 +374,56 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL027",
-                "code": "DL501",
-                "airline_name": "Delta",
-                "time": "11:00 AM",
+                "flightNumber": "DL501",
+                "airlineName": "Delta",
+                "arrivalTime": "11:00 AM",
                 "date": "2024-10-12",
                 "price": 530,
-                "travelling_time": "4h 30m",
-                "stops": []
+                "duration": "4h 30m",
+                "stops": "Non-stop",
+                "arrival_airport_id": "AP002"
               },
               {
                 "id": "FL028",
-                "code": "AA201",
-                "airline_name": "American Airlines",
-                "time": "1:30 PM",
+                "flightNumber": "AA201",
+                "airlineName": "American Airlines",
+                "arrivalTime": "1:30 PM",
                 "date": "2024-10-12",
                 "price": 580,
-                "travelling_time": "4h 45m",
-                "stops": []
+                "duration": "4h 45m",
+                "stops": "1 stop",
+                "arrival_airport_id": "AP001",
               },
-              {
-                "id": "FL029",
-                "code": "UA403",
-                "airline_name": "United Airlines",
-                "time": "3:45 PM",
-                "date": "2024-10-13",
-                "price": 620,
-                "travelling_time": "5h",
-                "stops": []
-              }
             ],
             "departure": [
               {
                 "id": "FL030",
-                "code": "DL502",
-                "airline_name": "Delta",
-                "time": "7:00 AM",
+                "flightNumber": "DL502",
+                "airlineName": "Delta",
+                "arrivalTime": "7:00 AM",
                 "date": "2024-10-14",
                 "price": 520,
-                "travelling_time": "4h 30m",
-                "stops": []
+                "duration": "4h 30m",
+                "stops": "1 stop",
+                "departure_airport_id": "AP004"
               },
               {
                 "id": "FL031",
-                "code": "AA202",
-                "airline_name": "American Airlines",
-                "time": "10:00 AM",
+                "flightNumber": "AA202",
+                "airlineName": "American Airlines",
+                "arrivalTime": "10:00 AM",
                 "date": "2024-10-14",
                 "price": 570,
-                "travelling_time": "4h 45m",
-                "stops": []
+                "duration": "4h 45m",
+                "stops": "1 stop",
+                "departure_airport_id": "AP003"
               }
             ]
           }
         ]
       },
       {
-        "id": "AP006",
+        "id": "AP008",
         "name": "Dubai International Airport",
         "code": "DXB",
         "country": "Dubai",
@@ -474,110 +433,64 @@ type AirportsData = Airport[];
             "arrival": [
               {
                 "id": "FL036",
-                "code": "EK701",
-                "airline_name": "Emirates",
-                "time": "8:00 AM",
+                "flightNumber": "EK701",
+                "airlineName": "Emirates",
+                "arrivalTime": "8:00 AM",
                 "date": "2024-10-12",
                 "price": 450,
-                "travelling_time": "4h",
-                "stops": []
+                "duration": "4h",
+                "stops": "1 stop",
+                "arrival_airport_id": "AP007",
               },
               {
                 "id": "FL037",
-                "code": "QR401",
-                "airline_name": "Qatar Airways",
-                "time": "11:30 AM",
+                "flightNumber": "QR401",
+                "airlineName": "Qatar Airways",
+                "arrivalTime": "11:30 AM",
                 "date": "2024-10-12",
                 "price": 480,
-                "travelling_time": "3h 45m",
-                "stops": ["ST101"]
+                "duration": "3h 45m",
+                "stops": "1 stop",
+                "arrival_airport_id": "AP006",
               },
-              {
-                "id": "FL038",
-                "code": "EY301",
-                "airline_name": "Etihad Airways",
-                "time": "2:45 PM",
-                "date": "2024-10-13",
-                "price": 500,
-                "travelling_time": "3h 30m",
-                "stops": []
-              },
-              {
-                "id": "FL039",
-                "code": "EK702",
-                "airline_name": "Emirates",
-                "time": "5:00 PM",
-                "date": "2024-10-13",
-                "price": 520,  
-                "travelling_time": "4h",
-                "stops": ["ST102"]
-              },
-              {
-                "id": "FL040",
-                "code": "QR402",
-                "airline_name": "Qatar Airways",
-                "time": "9:00 AM",
-                "date": "2024-10-14",
-                "price": 460,
-                "travelling_time": "3h 45m",
-                "stops": []
-              }
             ],
             "departure": [
               {
                 "id": "FL041",
-                "code": "EK703",
-                "airline_name": "Emirates",
-                "time": "6:30 AM",
+                "flightNumber": "EK703",
+                "airlineName": "Emirates",
+                "arrivalTime": "6:30 AM",
                 "date": "2024-10-12",
                 "price": 470,
-                "travelling_time": "4h",
-                "stops": []
+                "duration": "4h",
+                "stops":"1 stop",
+                "departure_airport_id": "AP004"
               },
               {
                 "id": "FL042",
-                "code": "EY302",
-                "airline_name": "Etihad Airways",
-                "time": "12:00 PM",
+                "flightNumber": "EY302",
+                "airlineName": "Etihad Airways",
+                "arrivalTime": "12:00 PM",
                 "date": "2024-10-12",
                 "price": 490,
-                "travelling_time": "3h 30m",
-                "stops": ["ST103"]
+                "duration": "3h 30m",
+                "stops": "1 stop",
+                "departure_airport_id": "AP001"
               },
               {
                 "id": "FL043",
-                "code": "QR403",
-                "airline_name": "Qatar Airways",
-                "time": "3:30 PM",
+                "flightNumber": "QR403",
+                "airlineName": "Qatar Airways",
+                "arrivalTime": "3:30 PM",
                 "date": "2024-10-13",
                 "price": 510,
-                "travelling_time": "3h 45m",
-                "stops": []
+                "duration": "3h 45m",
+                "stops": "Non-stop",
+                "departure_airport_id": "AP006"
               },
-              {
-                "id": "FL044",
-                "code": "EK704",
-                "airline_name": "Emirates",
-                "time": "6:15 PM",
-                "date": "2024-10-13",
-                "price": 530,
-                "travelling_time": "4h",
-                "stops": ["ST104"]
-              },
-              {
-                "id": "FL045",
-                "code": "EY303",
-                "airline_name": "Etihad Airways",
-                "time": "8:45 AM",
-                "date": "2024-10-14",
-                "price": 460,
-                "travelling_time": "3h 30m",
-                "stops": []
-              }
             ]
           }
         ]
       }      
     ]
   export {airports};
-  

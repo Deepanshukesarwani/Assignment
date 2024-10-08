@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+// import '@fontsource/inter/variable.css' 
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -51,11 +51,23 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		  boxShadow: {
+			'top-md': '6px 6px 6px 6px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06)',
+		  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		  keyframes: {
+			loading: {
+			  '0%': { left: '-100%' },
+			  '100%': { left: '100%' },
+			},
+		  },
+		  animation: {
+			'linear-loading': 'loading 2s infinite linear',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],

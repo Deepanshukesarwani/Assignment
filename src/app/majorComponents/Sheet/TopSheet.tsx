@@ -16,17 +16,19 @@ import {
 import { Navbar } from "../navbar/Navbar";
 import Index from "../search.components";
 
+
 const TopSheet: React.FC = () => {
     return (
+      <div className="w-[45vw]  ">
       <Sheet key={"top"}>
         <SheetTrigger asChild className="">
-            <div className=" w-[60%]">
+            <div className="w-[100%]  ">
             <Navbar />
             </div>
         </SheetTrigger>
         <SheetContent side={"top"} className="h-[35vh]">
           <SheetHeader>
-            <div className="p-6">
+            <div className="p-[1rem] flex justify-center mt-2">
               <Index/>
             </div>
           </SheetHeader>
@@ -34,6 +36,8 @@ const TopSheet: React.FC = () => {
           </SheetFooter>
         </SheetContent>
       </Sheet>
+      </div>
+
     );
   };
   

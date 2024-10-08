@@ -16,12 +16,13 @@ import Sidebar from "../sidebar/Sidebar";
 import { Separator } from "@radix-ui/react-select";
 import { TimelineLayout } from "../sidebar/TrailSidebar";
 import { timelineData } from "@/app/data";
+
 const flightData = [
   {
     airlineLogo: "/path-to/emirates-logo.png",
     airlineName: "Emirates",
     flightNumber: "AT 4334",
-    departureTime: "9:45 AM",
+    // departureTime: "9:45 AM",
     arrivalTime: "11:45 AM",
     duration: "2h 10min",
     stops: "Non stop",
@@ -37,7 +38,7 @@ const flightData = [
     airlineLogo: "/path-to/lufthansa-logo.png",
     airlineName: "Lufthansa",
     flightNumber: "AT 4334",
-    departureTime: "11:45 PM",
+    // departureTime: "11:45 PM",
     arrivalTime: "6:45 AM",
     duration: "4h 10min",
     stops: "2 stops",
@@ -51,6 +52,8 @@ const flightData = [
   // More flights...
 ];
 const RightSheet: React.FC = () => {
+
+  // const departureTime=
   return (
     <>
       {flightData.map((flight, index) => (
@@ -61,7 +64,7 @@ const RightSheet: React.FC = () => {
               airlineLogo={flight.airlineLogo}
               airlineName={flight.airlineName}
               flightNumber={flight.flightNumber}
-              departureTime={flight.departureTime}
+              // departureTime={flight.departureTime}
               arrivalTime={flight.arrivalTime}
               duration={flight.duration}
               stops={flight.stops}

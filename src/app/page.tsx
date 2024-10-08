@@ -31,6 +31,8 @@ const FlightSearch = () => {
     setDestination(temp);
   };
 
+
+
   const handleSearch = (input: string, type: "departure" | "destination") => {
     const filtered = airports.filter(
       (airport) =>
@@ -61,17 +63,22 @@ const FlightSearch = () => {
     setActiveDropdown(null); // Close dropdown after selection
   };
   return (
-    <main className="w-[100vw] h-[100vh] bg-slate-100 flex flex-col items-center">
+    <main className="w-[100vw] h-[100vh]  flex flex-col items-center">
       {/* Flight form */}
-      <div className="w-[80%] mt-[4rem]">
-      <h1 className="text-3xl mb-4 p-0 m-0 text-center">Good Afternoon! Brian</h1>
-        <div className="p-4 bg-white shadow rounded-md">
-          <div className="flex-col space-y-3">
+      <div className="w-[75%] mt-[4rem] h-[60%]  p-3 ">
+      <h1 className="text-4xl mb-4 p-0 m-0 text-center">Good Afternoon! Brian</h1>
+        <div className="p-6 bg-white w-[100%] h-[80%] flex flex-col  shadow-md shadow-top-md rounded-md">
+
+          <div className="flex-col space-y-4 mb-4 h-[]">
             <div>
               <Button>Flights</Button>
             </div>
           </div> 
+
+          <div>
           <Index/>
+          </div>
+
         </div>
       </div>
     </main>
