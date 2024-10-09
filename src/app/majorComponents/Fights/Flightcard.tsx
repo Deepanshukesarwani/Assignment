@@ -1,10 +1,10 @@
 // components/FlightCard.tsx
 import React from "react";
 import { Button } from "@/components/ui/button"; // Reuse Shadcn's Button component
-import Image from "next/image";
+import Image,{ StaticImageData }from "next/image";
 // import emiratesLogo from '/public/icons/emirates.png';
 interface FlightCardProps {
-  airlineLogo: string; // Airline logo image URL
+  airlineLogo: string | StaticImageData; // Airline logo image URL
   airlineName: string;
   flightNumber: string;
   // departureTime: string;
