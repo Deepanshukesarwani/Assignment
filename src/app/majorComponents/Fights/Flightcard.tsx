@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button"; // Reuse Shadcn's Button component
 import Image from "next/image";
-
+// import emiratesLogo from '/public/icons/emirates.png';
 interface FlightCardProps {
   airlineLogo: string; // Airline logo image URL
   airlineName: string;
@@ -32,6 +32,7 @@ export const FlightCard: React.FC<FlightCardProps> = ({
   onSelect,
   onClick
 }) => {
+  console.log(airlineLogo)
   return (
     <div onClick={onClick} className=" h-[90%] border  border-gray-300 flex  justify-between rounded-sm  hover:bg-gray-50">
       <div className=" w-[81%]">

@@ -17,10 +17,11 @@ import { Separator } from "@radix-ui/react-select";
 import { TimelineLayout } from "../sidebar/TrailSidebar";
 import { timelineData } from "@/app/data";
 import { useFlightStore } from "@/store/userStore";
-
+import emiratesLogo from '/public/icons/emirates.png';
+import luthansalogo from '/public/icons/luthansa.png'
 const flightData = [
   {
-    airlineLogo: "/path-to/emirates-logo.png",
+    airlineLogo: emiratesLogo,
     airlineName: "Emirates",
     flightNumber: "AT 4334",
     arrivalTime: "11:45 AM",
@@ -35,7 +36,7 @@ const flightData = [
     layoverTime: "2h 25m",
   },
   {
-    airlineLogo: "/path-to/lufthansa-logo.png",
+    airlineLogo: luthansalogo,
     airlineName: "Lufthansa",
     flightNumber: "AT 4334",
     arrivalTime: "6:45 AM",
@@ -50,7 +51,7 @@ const flightData = [
   },
   // Additional flight entries
   {
-    airlineLogo: "/path-to/air-france-logo.png",
+    airlineLogo: luthansalogo,
     airlineName: "Air France",
     flightNumber: "AF 1893",
     arrivalTime: "8:30 AM",
@@ -64,7 +65,7 @@ const flightData = [
     flightTime: "6h 00m",
   },
   {
-    airlineLogo: "/path-to/qatar-airways-logo.png",
+    airlineLogo: emiratesLogo,
     airlineName: "Qatar Airways",
     flightNumber: "QR 8903",
     arrivalTime: "2:15 PM",
@@ -78,7 +79,7 @@ const flightData = [
     flightTime: "2h 45m",
   },
   {
-    airlineLogo: "/path-to/etihad-logo.png",
+    airlineLogo: luthansalogo,
     airlineName: "Etihad Airways",
     flightNumber: "EY 2304",
     arrivalTime: "5:30 PM",
@@ -92,7 +93,7 @@ const flightData = [
     flightTime: "7h 00m",
   },
   {
-    airlineLogo: "/path-to/british-airways-logo.png",
+    airlineLogo: emiratesLogo,
     airlineName: "British Airways",
     flightNumber: "BA 7890",
     arrivalTime: "10:00 AM",
@@ -110,13 +111,21 @@ const flightData = [
 const RightSheet: React.FC = () => {
 
   // const departureTime=
+  const updateSelectedFlight = useFlightStore((state) => state.updateSelectedFlight);
+
+  const handleFlightClick = (flight:any) => {
+    // Store the clicked flight in the global state
+    updateSelectedFlight(flight);
+  };
   const destinationAirport = useFlightStore((state) => state.destination);
   const departureAirport = useFlightStore((state) => state.departure);
   return (
     <>
       {flightData.map((flight, index) => (
         <Sheet>
-          <SheetTrigger asChild className="">
+          <SheetTrigger asChild >
+            <div onClick={() => handleFlightClick(flight)}>
+
             <FlightCard
               key={index}
               airlineLogo={flight.airlineLogo}
@@ -130,34 +139,16 @@ const RightSheet: React.FC = () => {
               stops={flight.stops}
               price={flight.price}
             />
+            </div>
           </SheetTrigger>
           <SheetContent side={"right"} className="min-w-[50vw]">
             <SheetHeader>
-              {/* <h1>heelo bhaiya</h1> */}
-              <div>
 
-              </div>
               <SheetTitle className="p-5">Flight Details</SheetTitle>
-              {/* <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription> */}
+
               <Separator className="my-4 h-[1px]  bg-gray-300" />
-              {/* <Sidebar
-                departureAirport={flight.departureAirport}
-                departureCode={flight.departureCode}
-                arrivalAirport={flight.arrivalAirport}
-                arrivalCode={flight.arrivalCode}
-                airlineName={flight.airlineName}
-                airlineLogo={flight.airlineLogo}
-                flightTime={flight.flightTime}
-                layoverTime={flight.layoverTime}
-              /> */}
-              {/* <Sidebar
-              flightLegs={flightData}
-              /> */}
-              <div className=" h-[20%]">
-              <TimelineLayout items={timelineData} />
+              <div className=" p-3 h-[20%]">
+              <TimelineLayout  />
               </div>
             </SheetHeader>
             <SheetFooter></SheetFooter>
