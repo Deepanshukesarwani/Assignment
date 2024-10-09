@@ -1,13 +1,32 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { StaticImageData } from 'next/image';
+// interface Flight {
+//   airlineLogo: string; // The airline's logo (URL or image path)
+//   airlineName: string; // Name of the airline
+//   flightNumber: string; // Flight number
+//   arrivalTime: string; // Arrival time of the flight
+//   duration: string; // Flight duration
+//   stops: string; // Stopover information (e.g., "Non stop", "1 stop")
+//   price: string; // Price of the flight (e.g., "AED 4,200.30")
+//   departureAirport: string; // Name of the departure airport
+//   departureCode: string; // IATA code of the departure airport (e.g., "LHR")
+//   arrivalAirport: string; // Name of the arrival airport
+//   arrivalCode: string; // IATA code of the arrival airport (e.g., "JFK")
+//   flightTime: string; // Total flight time (e.g., "8h 30m")
+//   id: string;
+//   date: string;
+//   arrival_airport_id?:string;
+//   departure_airport_id?: string;
 
+// }
 interface AirportData {
   id: string;
   name: string;
   code: string;
   country: string;
   city: string;
-  flights: any[]; // You can define the flight structure if needed
+  // flights?: Flight[]; // You can define the flight structure if needed
 }
 
 interface FlightStoreState {
@@ -18,7 +37,7 @@ interface FlightStoreState {
   departureDate: Date | null;
   returnDate: Date | null;
   isloading: boolean;
-  selectedFlight: FlightData | null;
+  selectedFlight: FlightDataSchema | null;
   updateDeparture: (departure: AirportData) => void;
   updateDestination: (destination: AirportData) => void;
   updateWhereFrom: (whereFrom: string) => void;
@@ -26,11 +45,11 @@ interface FlightStoreState {
   updateDepartureDate: (departureDate: Date | null) => void;
   updateReturnDate: (returnDate: Date | null) => void;
   updateIsloading: (isloading: boolean) => void;
-  updateSelectedFlight: (flight: FlightData) => void;
+  updateSelectedFlight: (flight: FlightDataSchema) => void;
 }
 
-interface FlightData {
-  airlineLogo: string;
+export interface FlightDataSchema {
+  airlineLogo: string | StaticImageData;
   airlineName: string;
   flightNumber: string;
   arrivalTime: string;
@@ -62,7 +81,7 @@ const useFlightStore = create(
       updateDepartureDate: (departureDate: Date | null) => set({ departureDate }),
       updateReturnDate: (returnDate: Date | null) => set({ returnDate }),
       updateIsloading: (isloading: boolean) => set({ isloading }),
-      updateSelectedFlight: (flight: FlightData) => set({ selectedFlight: flight }),
+      updateSelectedFlight: (flight: FlightDataSchema) => set({ selectedFlight: flight }),
     }),
     {
       name: 'flight-storage', // Name of the item in localStorage
@@ -71,5 +90,5 @@ const useFlightStore = create(
   )
 );
 
-export { useFlightStore };
+export { useFlightStore};
 

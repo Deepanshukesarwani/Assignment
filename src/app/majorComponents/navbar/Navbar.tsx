@@ -17,7 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClick }) => {
   const formattedReturnDate = format(returnDate!, "MMM dd");
   const formattedDepatureDate = format(departureDate!, "MMM dd");
     
-  console.log(departureDate);
+  // console.log(departureDate);
   return (
     <div
       onClick={onClick}

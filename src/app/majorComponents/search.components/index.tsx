@@ -13,7 +13,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 import Image from "next/image";
 import SwapImage from "/public/icons/Vector.png";
-import { Calendar as CalendarIcon, RefreshCw } from "lucide-react";
+import { Calendar as CalendarIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useFlightStore } from "@/store/userStore";
 import { useToast } from "@/hooks/use-toast";
@@ -57,7 +57,7 @@ function Index() {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+     setTimeout(() => {
       setLoading(false);
     }, 5000); // 6 seconds
 
@@ -270,7 +270,7 @@ function Index() {
               <Calendar
                 mode="single"
                 selected={returnDate || undefined}
-                onSelect={(day:Date | undefined)=>setReturnDate(day ?? null)}
+               onSelect={(day:Date | undefined)=>setReturnDate(day ?? null)}
                 initialFocus
               />
             </PopoverContent>

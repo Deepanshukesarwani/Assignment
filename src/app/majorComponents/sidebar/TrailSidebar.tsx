@@ -12,14 +12,14 @@ import React from "react";
 //   TimelineContent,
 //   TimelineTime,
 // } from "@/components/ui/timeline/timeLine";
-import { TimelineElement } from "@/app/data";
+// import { TimelineElement } from "@/app/data";
 import { useFlightStore } from "@/store/userStore";
 import Image from "next/image";
 import { format } from "date-fns";
-interface TimelineLayoutProps {
-  items?: TimelineElement[]; // Replace any[] with the actual type of items.
-}
-export const TimelineLayout = ({ items }: TimelineLayoutProps) => {
+// interface TimelineLayoutProps {
+//   items?: TimelineElement[]; // Replace any[] with the actual type of items.
+// }
+export const TimelineLayout = () => {
 
 
 	const selectedFlight = useFlightStore((state) => state.selectedFlight);

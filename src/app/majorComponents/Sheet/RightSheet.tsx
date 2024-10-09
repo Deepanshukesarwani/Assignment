@@ -19,6 +19,7 @@ import { TimelineLayout } from "../sidebar/TrailSidebar";
 import { useFlightStore } from "@/store/userStore";
 import emiratesLogo from '/public/icons/emirates.png';
 import luthansalogo from '/public/icons/luthansa.png'
+import { FlightDataSchema } from "@/store/userStore";
 const flightData = [
   {
     airlineLogo: emiratesLogo,
@@ -113,7 +114,7 @@ const RightSheet: React.FC = () => {
   // const departureTime=
   const updateSelectedFlight = useFlightStore((state) => state.updateSelectedFlight);
 
-  const handleFlightClick = (flight:any) => {
+  const handleFlightClick = (flight:FlightDataSchema) => {
     // Store the clicked flight in the global state
     updateSelectedFlight(flight);
   };
@@ -122,7 +123,7 @@ const RightSheet: React.FC = () => {
   return (
     <>
       {flightData.map((flight, index) => (
-        <Sheet>
+        <Sheet key={index}>
           <SheetTrigger asChild >
             <div onClick={() => handleFlightClick(flight)}>
 

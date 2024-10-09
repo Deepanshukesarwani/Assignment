@@ -1,20 +1,20 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Index from "../majorComponents/search.components";
+import React from "react";
+// import Index from "../majorComponents/search.components";
 import TopSheet from "../majorComponents/Sheet/TopSheet";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Cross from "/public/icons/cross.png";
-import { CircleX } from "lucide-react";
+// import Image from "next/image";
+// import Cross from "/public/icons/cross.png";
+// import { CircleX } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { X } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  // CardDescription,
+  // CardFooter,
+  // CardHeader,
+  // CardTitle,
 } from "@/components/ui/card";
 // import { FlightCard } from "../majorComponents/Fights/Flightcard";
 import RightSheet from "../majorComponents/Sheet/RightSheet";
@@ -23,16 +23,16 @@ import { LinearLoader } from "../majorComponents/LoadingScreen/linearLoading";
 import { useFlightStore } from "@/store/userStore";
 import LoadingComponent from "../majorComponents/LoadingScreen/Loading";
 // import Image from "next/image";
-import CenterImg from "/public/icons/paperPlane.gif";
+// import CenterImg from "/public/icons/paperPlane.gif";
 export default function Home() {
   const route = useRouter();
-  const handleSelectFlight = (flight: any) => {
-    console.log("Selected flight:", flight);
-  };
+  // const handleSelectFlight = (flight: any) => {
+  //   console.log("Selected flight:", flight);
+  // };
 
   // const [loading, setLoading] = useState(true);
   const loading = useFlightStore((state) => state.isloading);
-  const setLoading = useFlightStore((state) => state.updateIsloading);
+  // const setLoading = useFlightStore((state) => state.updateIsloading);
 
   // Simulate a loading delay
   // useEffect(() => {

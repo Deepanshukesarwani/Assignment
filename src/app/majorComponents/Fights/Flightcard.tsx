@@ -32,7 +32,7 @@ export const FlightCard: React.FC<FlightCardProps> = ({
   onSelect,
   onClick
 }) => {
-  console.log(airlineLogo)
+  // console.log(airlineLogo)
   return (
     <div onClick={onClick} className=" h-[90%] border  border-gray-300 flex  justify-between rounded-sm  hover:bg-gray-50">
       <div className=" w-[81%]">
