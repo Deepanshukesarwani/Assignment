@@ -1,5 +1,5 @@
 import React from 'react'
-import { SkeletonDemo } from '../majorComponents/LoadingScreen/Skeleton'
+// import { SkeletonDemo } from '../majorComponents/LoadingScreen/Skeleton'
 import { LinearLoader } from '../majorComponents/LoadingScreen/linearLoading'
 
 function page() {

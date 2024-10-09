@@ -68,6 +68,9 @@ const config: Config = {
 		  animation: {
 			'linear-loading': 'loading 2s infinite linear',
 		  },
+		  backgroundImage: {
+			'custom-gradient': 'linear-gradient(90deg, rgba(58, 104, 137, 0.5) 0%, #3A6889 45.63%, rgba(58, 104, 137, 0.5) 100%)',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],

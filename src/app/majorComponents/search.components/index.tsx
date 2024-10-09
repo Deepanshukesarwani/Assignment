@@ -75,7 +75,7 @@ function Index() {
         // status: "error",
         duration: 3000, // Duration of the toast
       });
-    }  else {
+    } else {
       router.push("/search");
     }
 
@@ -83,11 +83,10 @@ function Index() {
   };
 
   const handleSearch = (input: string, type: "departure" | "destination") => {
-
     if (input === "") {
-      setFilteredAirports([]);  // Set filtered to empty array when input is cleared
-      setActiveDropdown(null);   // Close dropdown when input is empty
-       // Exit the function early if input is empty
+      setFilteredAirports([]); // Set filtered to empty array when input is cleared
+      setActiveDropdown(null); // Close dropdown when input is empty
+      // Exit the function early if input is empty
     }
     console.log(whereFrom);
     const filtered = airports.filter(
@@ -162,9 +161,11 @@ function Index() {
                 >
                   {/* {airport.city}, {airport.country} ({airport.code}) */}
                   <div>
-                  {airport.country}
-                  <br />
-                  <span className="text-gray-500 font-sans">{airport.city}</span>
+                    {airport.country}
+                    <br />
+                    <span className="text-gray-500 font-sans">
+                      {airport.city}
+                    </span>
                   </div>
                   <div>{airport.code}</div>
                 </li>
@@ -174,10 +175,13 @@ function Index() {
         </div>
 
         {/* Swap button */}
-        <div className="flex items-center rounded-full shadow-sm h-12 w-12 p-4 hover:bg-gray-50" onClick={handleSwap}>
+        <div
+          className="flex items-center rounded-full shadow-sm h-12 w-12 p-4 hover:bg-gray-50"
+          onClick={handleSwap}
+        >
           {/* <Button variant={"ghost"}  className="p-2 rounded-full">
           </Button> */}
-            <Image src={SwapImage} alt="Swap" />
+          <Image src={SwapImage} alt="Swap" />
         </div>
 
         {/* "Where to?" input with icon and dropdown */}
@@ -196,13 +200,15 @@ function Index() {
               {filteredAirports.map((airport) => (
                 <li
                   key={airport.id}
-                   className="px-4 py-2 cursor-pointer hover:bg-gray-300 flex justify-between "
+                  className="px-4 py-2 cursor-pointer hover:bg-gray-300 flex justify-between "
                   onClick={() => handleSelectAirport(airport.id, "destination")}
                 >
                   <div className="">
-                  {airport.country}
-                  <br />
-                  <span className="text-gray-500 font-sans">{airport.city}</span>
+                    {airport.country}
+                    <br />
+                    <span className="text-gray-500 font-sans">
+                      {airport.city}
+                    </span>
                   </div>
                   <div>{airport.code}</div>
                 </li>
@@ -233,10 +239,8 @@ function Index() {
             <PopoverContent className="w-auto p-0">
               <Calendar
                 mode="single"
-                selected={departureDate!}
-                onSelect={(day: Date | undefined) =>
-                  setDepartureDate(day ?? null)
-                }
+                selected={departureDate || undefined}
+                onSelect={(day: Date | undefined) => setDepartureDate(day ?? null)} 
                 initialFocus
               />
             </PopoverContent>
@@ -265,8 +269,8 @@ function Index() {
             <PopoverContent className="w-auto p-0">
               <Calendar
                 mode="single"
-                selected={returnDate!}
-                onSelect={setReturnDate}
+                selected={returnDate || undefined}
+                onSelect={(day:Date | undefined)=>setReturnDate(day ?? null)}
                 initialFocus
               />
             </PopoverContent>

@@ -1,6 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import Image from "next/image";
-import CenterImg from "/public/icons/centerloading.png"
+// import Image from "next/image";
+// import CenterImg from "/public/icons/centerloading.png"
 export function SkeletonDemo() {
   return (
     <div className="w-[100vw]  flex flex-col p-6">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { useFlightStore } from "@/store/userStore";
@@ -16,7 +16,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onClick }) => {
 
   const formattedReturnDate = format(returnDate!, "MMM dd");
   const formattedDepatureDate = format(departureDate!, "MMM dd");
-
+    
+  console.log(departureDate);
   return (
     <div
       onClick={onClick}

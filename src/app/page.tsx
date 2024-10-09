@@ -1,16 +1,16 @@
 "use client";
 import  React, { useState } from "react";
-import { MapPin, Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+// import { MapPin, Search } from "lucide-react";
+// import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { airports } from "./../data/data"; // Import your airports data
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
-import { format } from "date-fns";
-import Image from "next/image";
-import SwapImage from "./../../public/icons/Vector.png";
-import { Calendar as CalendarIcon, RefreshCw } from "lucide-react"; 
+// import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+// import { cn } from "@/lib/utils";
+// import { Calendar } from "@/components/ui/calendar";
+// import { format } from "date-fns";
+// import Image from "next/image";
+// import SwapImage from "./../../public/icons/Vector.png";
+// import { Calendar as CalendarIcon, RefreshCw } from "lucide-react"; 
 import { useRouter } from 'next/navigation'
 import Index from "./majorComponents/search.components";
 const FlightSearch = () => {

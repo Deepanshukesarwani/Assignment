@@ -23,8 +23,8 @@ interface FlightStoreState {
   updateDestination: (destination: AirportData) => void;
   updateWhereFrom: (whereFrom: string) => void;
   updateWhereTo: (whereTo: string) => void;
-  updateDepartureDate: (departureDate: Date) => void;
-  updateReturnDate: (returnDate: Date) => void;
+  updateDepartureDate: (departureDate: Date | null) => void;
+  updateReturnDate: (returnDate: Date | null) => void;
   updateIsloading: (isloading: boolean) => void;
   updateSelectedFlight: (flight: FlightData) => void;
 }
@@ -59,8 +59,8 @@ const useFlightStore = create(
       updateDestination: (destination: AirportData) => set({ destination }),
       updateWhereTo: (whereTo: string) => set({ whereTo }),
       updateWhereFrom: (whereFrom: string) => set({ whereFrom }),
-      updateDepartureDate: (departureDate: Date) => set({ departureDate }),
-      updateReturnDate: (returnDate: Date) => set({ returnDate }),
+      updateDepartureDate: (departureDate: Date | null) => set({ departureDate }),
+      updateReturnDate: (returnDate: Date | null) => set({ returnDate }),
       updateIsloading: (isloading: boolean) => set({ isloading }),
       updateSelectedFlight: (flight: FlightData) => set({ selectedFlight: flight }),
     }),

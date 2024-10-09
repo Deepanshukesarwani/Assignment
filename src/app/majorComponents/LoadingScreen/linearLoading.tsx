@@ -19,7 +19,7 @@ export function LinearLoader() {
   return (
     <div className="relative w-full h-[3px] bg-gray-200 overflow-hidden">
       <div
-        className="absolute h-[4px] bg-[#4caf50] w-1/3 animate-linear-loading"
+        className="absolute h-[4px] bg-custom-gradient w-1/3 animate-linear-loading"
       />
     </div>
   );

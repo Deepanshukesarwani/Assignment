@@ -1,6 +1,6 @@
 // Sidebar.tsx
 import React from "react";
-
+import Image from "next/image";
 interface FlightLeg  {
   departureAirport: string;
   departureCode: string;
@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps> = (
     //     </div>
     //   </div>
     //   <div className="airline-info flex items-center space-x-2">
-    //     <img src={airlineLogo} alt={`${airlineName} logo`} className="w-6 h-6" />
+    //     <Image src={airlineLogo} alt={`${airlineName} logo`} className="w-6 h-6" />
     //     <span>{airlineName}</span>
     //   </div>
     // </div>
@@ -86,7 +86,7 @@ const Sidebar: React.FC<SidebarProps> = (
           </div>
 
           <div className="mt-2 flex items-center space-x-2">
-            <img
+            <Image
               src={leg.airlineLogo}
               alt={`${leg.airlineName} logo`}
               className="w-6 h-6"

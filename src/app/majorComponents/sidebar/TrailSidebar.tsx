@@ -1,20 +1,21 @@
 "use client";
 
 import React from "react";
-import {
-  Timeline,
-  TimelineItem,
-  TimelineConnector,
-  TimelineHeader,
-  TimelineTitle,
-  TimelineIcon,
-  TimelineDescription,
-  TimelineContent,
-  TimelineTime,
-} from "@/components/ui/timeline/timeLine";
+// import {
+//   Timeline,
+//   TimelineItem,
+//   TimelineConnector,
+//   TimelineHeader,
+//   TimelineTitle,
+//   TimelineIcon,
+//   TimelineDescription,
+//   TimelineContent,
+//   TimelineTime,
+// } from "@/components/ui/timeline/timeLine";
 import { TimelineElement } from "@/app/data";
 import { useFlightStore } from "@/store/userStore";
 import Image from "next/image";
+import { format } from "date-fns";
 interface TimelineLayoutProps {
   items?: TimelineElement[]; // Replace any[] with the actual type of items.
 }
@@ -24,7 +25,13 @@ export const TimelineLayout = ({ items }: TimelineLayoutProps) => {
 	const selectedFlight = useFlightStore((state) => state.selectedFlight);
 	const destination=useFlightStore((state)=>state.destination)
 	const departure=useFlightStore((state)=>state.departure);
-console.log(destination);
+	const returnDate=useFlightStore((state)=>state.returnDate);
+	const departureDate=useFlightStore((state)=>state.departureDate);
+
+	const formattedReturnDate=format(returnDate!,"EEE dd MMM");
+	const formattedDepatureDate=format(departureDate!,"EEE dd MMM");
+	console.log(formattedReturnDate);
+// console.log(destination);
 	// console.log(selectedFlight);
 
 	if (!selectedFlight) {
@@ -43,7 +50,7 @@ console.log(destination);
       {/* Flight info */}
       <div className="flex justify-between w-full">
         <div className="space-y-1">
-          <div className="text-sm text-gray-500">Sat 28 Sept · 2:15</div>
+          <div className="text-sm text-gray-500">{formattedDepatureDate}· 2:15</div>
           <div className="font-semibold">{departure?.code} · {departure?.name}</div>
         </div>
         <div className="flex items-center space-x-2">
@@ -65,7 +72,7 @@ console.log(destination);
       </div>
       <div className="flex justify-between w-full">
         <div className="space-y-1">
-          <div className="text-sm ">Sat 28 Sept · 2:15</div>
+          <div className="text-sm ">{formattedDepatureDate} · 2:15</div>
           <div className="font-semibold">{destination?.code} . {destination?.name}</div>
           <div>layoverTime</div>
         </div>
@@ -84,7 +91,7 @@ console.log(destination);
       {/* Flight info */}
       <div className="flex justify-between w-full">
         <div className="space-y-1">
-          <div className="text-sm text-gray-500">Sat 28 Sept · 2:15</div>
+          <div className="text-sm text-gray-500">{formattedReturnDate} · 2:15</div>
           <div className="font-semibold">{destination?.code} . {destination?.name}</div>
         </div>
         <div className="flex items-center space-x-2">
@@ -105,7 +112,7 @@ console.log(destination);
       </div>
       <div className="flex justify-between w-full">
         <div className="space-y-1">
-          <div className="text-sm text-gray-500">Sat 28 Sept · 2:15</div>
+          <div className="text-sm text-gray-500">{formattedReturnDate}· 2:15</div>
           <div className="font-semibold">{departure?.code} · {departure?.name}</div>
         </div>
       </div>

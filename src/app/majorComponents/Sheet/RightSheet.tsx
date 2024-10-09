@@ -1,9 +1,9 @@
 "use client";
 import {
   Sheet,
-  SheetClose,
+  // SheetClose,
   SheetContent,
-  SheetDescription,
+  // SheetDescription,
   SheetFooter,
   SheetHeader,
   SheetTitle,
@@ -12,10 +12,10 @@ import {
 
 import { FlightCard } from "../Fights/Flightcard";
 import React from "react";
-import Sidebar from "../sidebar/Sidebar";
+// import Sidebar from "../sidebar/Sidebar";
 import { Separator } from "@radix-ui/react-select";
 import { TimelineLayout } from "../sidebar/TrailSidebar";
-import { timelineData } from "@/app/data";
+// import { timelineData } from "@/app/data";
 import { useFlightStore } from "@/store/userStore";
 import emiratesLogo from '/public/icons/emirates.png';
 import luthansalogo from '/public/icons/luthansa.png'
