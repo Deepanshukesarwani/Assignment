@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
 // import Index from "../majorComponents/search.components";
 import TopSheet from "../majorComponents/Sheet/TopSheet";
 import { Button } from "@/components/ui/button";
@@ -22,56 +22,21 @@ import { SkeletonDemo } from "../majorComponents/LoadingScreen/Skeleton";
 import { LinearLoader } from "../majorComponents/LoadingScreen/linearLoading";
 import { useFlightStore } from "@/store/userStore";
 import LoadingComponent from "../majorComponents/LoadingScreen/Loading";
-// import Image from "next/image";
-// import CenterImg from "/public/icons/paperPlane.gif";
+
 export default function Home() {
   const route = useRouter();
-  // const handleSelectFlight = (flight: any) => {
-  //   console.log("Selected flight:", flight);
-  // };
-
-  // const [loading, setLoading] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
   const loading = useFlightStore((state) => state.isloading);
-  // const setLoading = useFlightStore((state) => state.updateIsloading);
 
-  // Simulate a loading delay
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 3000); // 6 seconds
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-  //   return () => clearTimeout(timer); // Cleanup timeout on unmount
-  // }, []);
+  if (!isMounted) return null;
+
   return (
     <div className="h-screen">
       {/* Navbar  */}
-      {/* <nav className=" flex flex-col justify-center h-[15%] p-0 mb-2 ">
-
-        <Card className="w-[100%] h-[99%] p-[1rem] flex justify-center items-center  rounded-none ">
-          <CardContent className="w-[90%] pt-4">
-            <div className="flex items-center justify-between  w-[100%] pt-4 pr-5">
-            <TopSheet />
-            <Button
-              variant="outline"
-              size="icon"
-              className="bg-white border-2 border-gray-200 rounded-full"
-            >
-              <X className="h-5 w-5 text-gray-400 " onClick={()=>route.push("/")} />
-            </Button>
-            </div>
-
-          </CardContent>
-
-        </Card>
-        {
-        loading?(
-          <div className="h-[1%]">
-
-            <LinearLoader/>
-          </div>
-        ):(<></>)
-       }
-      </nav> */}
       <nav className="fixed top-0 left-0 w-full z-50 flex flex-col justify-center h-[15%] p-0 mb-2 bg-white shadow-md">
         <Card className="w-[100%] h-[99%] p-[1rem] flex justify-center items-center  rounded-none">
           <CardContent className="w-[90%] pt-4">

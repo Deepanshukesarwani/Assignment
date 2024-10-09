@@ -17,13 +17,13 @@ import { Calendar as CalendarIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useFlightStore } from "@/store/userStore";
 import { useToast } from "@/hooks/use-toast";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 import { usePathname } from "next/navigation";
 function Index() {
   // const [departureDate, setDepartureDate] = useState<Date>();
   // const [returnDate, setReturnDate] = useState<Date>();
   const { toast } = useToast();
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const router = useRouter();
   const currentPath = usePathname();
 
@@ -79,7 +79,7 @@ function Index() {
       router.push("/search");
     }
 
-    console.log(searchParams);
+    // console.log(searchParams);
   };
 
   const handleSearch = (input: string, type: "departure" | "destination") => {
