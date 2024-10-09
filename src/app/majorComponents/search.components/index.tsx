@@ -152,7 +152,7 @@ function Index() {
             className="pl-10 h-14"
           />
           {activeDropdown === "departure" && (
-            <ul className="absolute mt-2 w-full bg-gray-200 text-black rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto custom-scrollbar overflow-hidden">
+            <ul className="absolute mt-2 w-full bg-white text-black rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto custom-scrollbar overflow-hidden">
               {filteredAirports.map((airport) => (
                 <li
                   key={airport.id}
