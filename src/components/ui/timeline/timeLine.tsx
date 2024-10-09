@@ -27,7 +27,7 @@ const TimelineItem = React.forwardRef<
   <li
     ref={ref}
     className={cn(
-      "relative flex flex-col items-center p-6 pt-0 [&>*]:mb-3",
+      "  flex flex-col  p-6 pt-0 [&>*]:mb-3",
       className
     )} // Centering items
     {...props}
@@ -41,7 +41,7 @@ const TimelineTime = React.forwardRef<
   <p
     ref={ref}
     className={cn(
-      " translate-x-36 w-[20%] md:-translate-x-24 text-sm font-semibold leading-none text-secondary-foreground",
+      " translate-x-36 w-[40%] md:-translate-x-24 text-sm font-semibold leading-none text-secondary-foreground",
       className
     )}
     {...props}
@@ -70,7 +70,7 @@ const TimelineConnector = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "absolute left-[0.9rem] top-4 w-px h-[79%] bg-primary", // Ensure it starts from the top and stretches down
+      "absolute left-[0.5rem] top-5 w-px h-[85%] bg-primary", // Ensure it starts from the top and stretches down
       className
     )}
     {...props}

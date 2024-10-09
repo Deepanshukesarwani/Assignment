@@ -20,50 +20,87 @@ interface TimelineLayoutProps {
 }
 export const TimelineLayout = ({ items }: TimelineLayoutProps) => {
   return (
-    // <Timeline>
-    //   <TimelineItem className="bg-orange-400">
-    //   <TimelineIcon />
-    //     <TimelineConnector className="bg-green-300" />
-    //     <TimelineHeader className="bg-yellow-200">
-    //       <TimelineTime className=" flex justify-evenly ">
-    //         <span>Mon</span>
-    //         <span>28</span>
-    //         <span>Sept</span>
-    //         <span>2:30</span>
-    //       </TimelineTime>
-    //       <TimelineTitle>
-    //         <span>DEL . Indira Gandhi International Airport</span>
-    //       </TimelineTitle>
-    //     </TimelineHeader>
-    //     <TimelineContent>
-    //       <TimelineDescription>{items[0].description}</TimelineDescription>
-    //     </TimelineContent>
-    //     <TimelineIcon />
-    //   </TimelineItem>
-    // </Timeline>
-    <TimelineItem className="bg-orange-400">
-		<div className="bg-slate-500 h-[100%] w-[1rem]">
-		<TimelineIcon className="absolute top-1 left-2" />
-        <TimelineConnector className="bg-green-300" />
-        <TimelineIcon className="absolute top-[10rem] left-2"/>
-		</div>
+	<div className="flex relative flex-col items-start space-y-0 py-4 w-full">
+  {/* Div 1 */}
+  <div id="1" className="w-full">
+    <div className="flex space-x-3  w-full">
+      {/* Icon and connector */}
+      <div className="flex flex-col items-center">
+        <div className="w-3 h-3 rounded-full border-[1px] border-black mb-2"></div>
+        <div className="w-[0.6px] h-[4rem] bg-black"></div>
+      </div>
+      {/* Flight info */}
+      <div className="flex justify-between w-full">
+        <div className="space-y-1">
+          <div className="text-sm text-gray-500">Sat 28 Sept · 2:15</div>
+          <div className="font-semibold">DXB · Dubai International Airport</div>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="/airline-logo.png" alt="Airline Logo" className="h-6 w-6" />
+          <div className="text-xs text-gray-500">
+            Saudi Arabian Airlines · SV553 <br />
+            Economy · A330 <br />
+            Flight time 3h 45m
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <TimelineHeader className="bg-yellow-200">
-        <TimelineTime className="absolute left-[8rem] top-1 bg-red-300">
-			<div className="w-full h-full bg-green-200 flex justify-evenly">
-          <span>Mon</span>
-          <span>28</span>
-          <span>Sept</span>
-          <span>2:30</span>
-			</div>
-        </TimelineTime>
-        <TimelineTitle className="">
-          <span>DEL . Indira Gandhi International Airport</span>
-        </TimelineTitle>
-      </TimelineHeader>
-      <TimelineContent>
-        <TimelineDescription>{items[0].description}</TimelineDescription>
-      </TimelineContent>
-    </TimelineItem>
+    {/* Timeline item 2 */}
+    <div className="flex mt-0 space-x-3  w-full">
+      <div className="flex flex-col items-center">
+        <div className="w-3 h-3 rounded-full border-[1px] mt-1 border-black"></div>
+        <div className="w-[1.5px] h-[6rem] border-l mt-[0.8rem] border-black border-dashed ml-1"></div>
+      </div>
+      <div className="flex justify-between w-full">
+        <div className="space-y-1">
+          <div className="text-sm ">Sat 28 Sept · 2:15</div>
+          <div className="font-semibold">RUH · King Khalid International Airport</div>
+          <div>layoverTime</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Div 3 */}
+  <div id="3" className="mt-[1rem] w-full">
+    <div className="flex space-x-3 w-full">
+      {/* Icon and connector */}
+      <div className="flex flex-col items-center">
+        <div className="w-3 h-3 rounded-full border-[1px] border-black mb-2"></div>
+        <div className="w-[0.6px] h-[4rem] bg-black"></div>
+      </div>
+      {/* Flight info */}
+      <div className="flex justify-between w-full">
+        <div className="space-y-1">
+          <div className="text-sm text-gray-500">Sat 28 Sept · 2:15</div>
+          <div className="font-semibold">DXB · Dubai International Airport</div>
+        </div>
+        <div className="flex items-center space-x-2">
+          <img src="/airline-logo.png" alt="Airline Logo" className="h-6 w-6" />
+          <div className="text-xs text-gray-500">
+            Saudi Arabian Airlines · SV553 <br />
+            Economy · A330 <br />
+            Flight time 3h 45m
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Timeline item 2 */}
+    <div className="flex mt-0 space-x-3">
+      <div className="flex flex-col items-center">
+        <div className="w-3 h-3 rounded-full border-[1px] mt-1 border-black"></div>
+      </div>
+      <div className="flex justify-between w-full">
+        <div className="space-y-1">
+          <div className="text-sm text-gray-500">Sat 28 Sept · 2:15</div>
+          <div className="font-semibold">RUH · King Khalid International Airport</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   );
 };

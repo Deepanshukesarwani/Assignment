@@ -156,7 +156,9 @@ const RightSheet: React.FC = () => {
               {/* <Sidebar
               flightLegs={flightData}
               /> */}
+              <div className=" h-[20%]">
               <TimelineLayout items={timelineData} />
+              </div>
             </SheetHeader>
             <SheetFooter></SheetFooter>
           </SheetContent>
